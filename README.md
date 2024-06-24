@@ -1,5 +1,5 @@
 # RabbitMQ Monitoring
-## Monitoring RabbitMQ Queues and notify user via notification or telegram bot
+## Monitoring RabbitMQ Queues and notify user via notification or telegram bot when queue threshold is reached
 
 ### Prerequisites:
 - python3
