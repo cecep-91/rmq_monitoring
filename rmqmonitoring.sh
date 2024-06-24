@@ -46,7 +46,7 @@ while true; do
     # ----- CHECK messages_ready
     for i in "${!msg_ready[@]}"; do
         if [ "${msg_ready[$i]}" -gt ${MSG_READY_THRESHOLD} ] && [ ${CHECK_MSG_READY} == true ]; then
-            MESSAGE="Queue with more than ${MSG_READY_THRESHOLD} messages ready: $i"
+            MESSAGE="[$(date +'%Y-%m-%d %H:%M:%S')] Queue with more than ${MSG_READY_THRESHOLD} messages ready: $i"
             # ----- DEBUG TO TERMINAL AND APPEND TO LOG FILE
             echo "${MESSAGE}" | tee -a ./logs/rabbitmq_monitoring_$(date +"%Y-%m-%d").log
 
@@ -65,7 +65,7 @@ while true; do
     # ----- CHECK messages_unacknowledged
     for i in "${!msg_unack[@]}"; do
         if [ "${msg_unack[$i]}" -gt ${MSG_UNACKNOWLEDGED_THRESHOLD} ] && [ ${CHECK_MSG_UNACKNOWLEDGED} == true ]; then
-            MESSAGE="Queue with more than ${MSG_UNACKNOWLEDGED_THRESHOLD} messages unacknowledged: $i"
+            MESSAGE="[$(date +'%Y-%m-%d %H:%M:%S')] Queue with more than ${MSG_UNACKNOWLEDGED_THRESHOLD} messages unacknowledged: $i"
             # ----- DEBUG TO TERMINAL AND APPEND TO LOG FILE
             echo "${MESSAGE}" | tee -a ./logs/rabbitmq_monitoring_$(date +"%Y-%m-%d").log
 
