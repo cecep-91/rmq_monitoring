@@ -7,7 +7,7 @@
 - curl
 
 ### How to use:
-- Clone repositor
+- Clone repository
     ```bash
     git clone https://github.com/cecep-91/rmq_monitoring.git
     ```
